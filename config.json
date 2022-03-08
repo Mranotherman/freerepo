@@ -5,7 +5,7 @@
       "count": 10,
       "args": {
         "method": "GET",
-        "path": "http://54.76.25.83:80",
+        "path": "http://134.119.228.26:80",
         "interval_ms": 1
       }
     },
@@ -14,14 +14,14 @@
       "count": 10,
       "args": {
         "method": "GET",
-        "path": "https://54.76.25.83:443",
+        "path": "https://134.119.228.26:443",
         "interval_ms": 1
       }
     },
     {
       "type": "packetgen",
       "args": {
-        "host": "54.76.25.83",
+        "host": "134.119.228.26",
         "port": "443",
         "packet": {
           "payload": "{{ random_payload 100 }}",
@@ -46,7 +46,7 @@
     {
       "type": "packetgen",
       "args": {
-        "host": "54.76.25.83",
+        "host": "134.119.228.26",
         "port": "80",
         "packet": {
           "payload": "{{ random_payload 100 }}",
