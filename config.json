@@ -1,0 +1,72 @@
+{
+  "jobs": [
+    {
+      "type": "http",
+      "count": 10,
+      "args": {
+        "method": "GET",
+        "path": "http://54.76.25.83:80",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "count": 10,
+      "args": {
+        "method": "GET",
+        "path": "https://54.76.25.83:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "packetgen",
+      "args": {
+        "host": "54.76.25.83",
+        "port": "443",
+        "packet": {
+          "payload": "{{ random_payload 100 }}",
+          "ethernet": {
+            "src_mac": "{{ random_mac_addr }}",
+            "dst_mac": "{{ random_mac_addr }}"
+          },
+          "ip": {
+            "src_ip": "{{ local_ip }}",
+            "dst_ip": "{{ random_ip }}"
+          },
+          "tcp": {
+            "src_port": "{{ random_port }}",
+            "dst_port": "{{ random_port }}",
+            "flags": {
+              "syn": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "packetgen",
+      "args": {
+        "host": "54.76.25.83",
+        "port": "80",
+        "packet": {
+          "payload": "{{ random_payload 100 }}",
+          "ethernet": {
+            "src_mac": "{{ random_mac_addr }}",
+            "dst_mac": "{{ random_mac_addr }}"
+          },
+          "ip": {
+            "src_ip": "{{ local_ip }}",
+            "dst_ip": "{{ random_ip }}"
+          },
+          "tcp": {
+            "src_port": "{{ random_port }}",
+            "dst_port": "{{ random_port }}",
+            "flags": {
+              "syn": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}
