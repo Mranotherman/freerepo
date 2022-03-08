@@ -5,7 +5,7 @@
       "count": 10,
       "args": {
         "method": "GET",
-        "path": "http://134.119.228.26:82",
+        "path": "http://134.119.228.26:80",
         "interval_ms": 1
       }
     },
